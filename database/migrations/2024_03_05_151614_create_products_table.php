@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('price');
-            $table->unsignedBigInteger('main_image_id')->nullable();
         });
     }
 
