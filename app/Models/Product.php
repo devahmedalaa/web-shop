@@ -25,6 +25,11 @@ class Product extends Model
         return $this->hasMany(ProductVariant::class);
     }
 
+    public function image(): HasOne
+    {
+        return $this->hasOne(Image::class)->ofMany('featured', 'max');
+    }
+
     public function images(): HasMany
     {
         return $this->hasMany(Image::class);
