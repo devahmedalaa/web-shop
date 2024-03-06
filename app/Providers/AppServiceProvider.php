@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::stringable(function (Money $money) {
             $currencies = new ISOCurrencies();
-            $numberFormatter = new NumberFormatter('en_us', NumberFormatter::class);
+            $numberFormatter = new NumberFormatter('en_us', NumberFormatter::CURRENCY);
             $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
 
             return $moneyFormatter->format($money);
